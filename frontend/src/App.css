@@ -1,0 +1,335 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Oswald', sans-serif;  
+  background-size: cover;  
+  color: #fff;
+  background-color: #001037;
+}
+
+header {
+  background: url('assets/BC.jpg') no-repeat center center fixed; 
+  background-size: 100%;
+  background-position-y: top;
+  height: 45vw;
+}
+
+header nav {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+header a {
+  color:#001037;
+  text-decoration: none;
+  padding: 10px 20px;
+  font-family: 'Oswald';
+  font-size: 20px;
+}
+
+header a:hover {
+  color: #fff;
+}
+
+.logoBC {
+  width: 20vh;
+  margin: 20px;  
+}
+
+.mobileMenu{
+  display: none;
+}
+
+nav.mobileMenu {
+  display: none;  
+}
+
+nav a {
+  color: #001037;
+  text-decoration: none;
+  padding: 5px 20px;
+  font-family: 'Oswald';
+  font-size: 25px;  
+}
+
+nav a:hover {
+  background: rgba(5,5,5,.3);  
+}
+
+section {
+  padding: 10px;  
+  text-align: center;
+  padding-bottom: 60px;
+}
+
+footer {
+  background: #333;
+  padding: 10px 0;
+  text-align: center;  
+  bottom: 0;
+  width: 100%;
+  color: #fff;
+}
+
+.menu-icon {
+  display: block;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+section h1 {
+  font-size: 64px;
+}
+
+section.agendaSection{
+  background-color: #ff8532;
+  color: #001031;
+  text-align: center;    
+}
+
+section table {
+  margin: 0 auto;  
+  width: 50%;  
+  max-width: 800px;
+}
+
+section table thead {
+  background-color: #001031;
+  color:#ff8532;
+  font-weight: bold;
+  font-size: large;
+}
+
+section.sobreSection{
+  background-color: #001031;
+  color: #57e1ee;  
+}
+
+section.sobreSection p{
+  max-width: 60%;
+  margin: auto;
+  text-align: justify;
+  margin-bottom: 20px;
+}
+
+section.musicaSection{
+  background-color: #0085ac;
+  color: #001031;
+}
+
+section.fotosEvideosSection{
+  background-color: #b0c6a0;  
+  color: #008b65;
+}
+
+section .ytVideo{
+  width: 720px;
+  height: 480px;
+  border: none;
+}
+
+section.lojaSection{
+  background-color: #008b65;
+  color: #b0c6a0;
+}
+
+section.contatoSection{
+  background-color: #4a9947;
+  color: #1e4835;
+}
+
+.socialNetworkContainer{
+  position: absolute;
+  margin-top: -50px;  
+}
+
+.logoMenu{
+  display: none;  
+}
+
+.btnScrollHidden{
+  display: none !important;
+}
+
+.btnScrollShow{
+  display: flex !important;
+  
+}
+
+.past{
+  color: #0085ac;
+}
+
+
+.g-recaptcha{
+  margin: auto;
+}
+
+.btn {  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  width: 50px;
+  height: 50px;  
+  text-decoration: none;
+}
+.btn::after {  
+  font-size: 32px;
+  font-weight: bold;
+  color: aliceblue;
+  transition: margin-top 250ms;
+}
+.btn:hover::after {
+  margin-top:-8px;
+}
+
+.spotifyPlayer {  
+  width: 720px;
+  height: 420px;
+}
+
+
+form .formContainer {
+  max-width: 300px;
+  margin: auto;
+}
+
+form .label {
+ margin-top: 15px;
+ text-align: left;
+ font-size: larger;
+}
+
+form .field {
+  width: 300px;
+}
+
+form .field input {
+  width: 300px;
+  font-size: larger;
+}
+
+form .field textarea {
+  width: 300px;
+  font-size: larger;
+}
+
+form .action {
+  margin-top: 10px;
+}
+
+form input[type=submit] {
+  background-color: #1e4835;
+  border: none;
+  width: 80px;
+  height: 30px;
+  font-size: large;
+  color: #4a9947;
+  cursor: pointer;
+}
+
+form input[type=submit]:hover {
+  background-color: #b0c6a0;  
+  color: #1e4835;
+}
+
+form input[type=submit]:focus {
+  background-color: #1e4835;  
+  color: #fff;
+}
+
+@media screen and (max-width: 1000px) {
+
+  .mobileMenu{        
+  }
+
+  nav {
+      display: none;
+      position: absolute;
+      width: 100%;
+  }
+
+  nav.mobileMenu {
+    display: none;           
+  }
+
+  nav.mobileMenu.show {
+      display: table;      
+      text-align: center;      
+  } 
+
+  header .desktopNavItem{
+    display: none;
+  }
+
+  nav .navItem {
+    padding: 14px 0 14px;
+    border: 1px #333 solid;
+    background-color: #b0c6a0;
+  }
+
+  nav .navItem a {      
+    width: 100%;    
+    color: #1e4835;
+    text-decoration: none;
+    padding: 0;        
+    background: #b0c6a0;
+  }
+
+  .logoBC {
+    width: 15vw;
+    margin-top: 20px;  
+  }
+
+  .menu-icon {
+      
+  }
+
+  .logoMenu{
+    display: inline;
+    width: 40px;  
+    margin-top: 10px;
+    margin-right: 20px;
+    content: '☰';
+    font-size: 50px;
+    color: #001031;
+  }
+
+  .socialMediaButtons {
+    /* display: none !important; */
+    position: fixed;
+    top:0px;
+    left: 0px;
+    margin-top: 15px;
+    margin-left: 15px;
+  }  
+
+  section table {
+    margin: 0 auto;  
+    width: 90%;      
+  }
+
+  section .ytVideo{
+    width: 330px;
+    height: 250px;
+  }
+
+  section.sobreSection p{
+    max-width: 90%;
+    margin: auto;
+    text-align: justify;
+    margin-bottom: 20px;
+  }
+
+  .spotifyPlayer {  
+    width: 360px;
+    height: 420px;
+  }
+}
