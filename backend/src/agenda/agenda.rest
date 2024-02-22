@@ -1,0 +1,37 @@
+@apiURL = http://192.168.3.62:3000
+
+### GET agenda
+GET {{apiURL}}/agenda
+content-yype: application/json
+
+### Add Show to Agenda
+PUT  {{apiURL}}/agenda/add
+Content-Type: application/json
+
+{
+    "dateTime": "2024/03/11 17:00:00",
+    "title": "Som que Surge",
+    "place": "Praça do Samambaial",
+    "comments": "Entrada livre - 17h",
+    "visible": false
+}
+
+### GET show
+GET {{apiURL}}/agenda/65d6c76fc042ae4d00ee7909
+content-yype: application/json
+
+### Update show
+POST  {{apiURL}}/agenda/65d6c76fc042ae4d00ee7909
+Content-Type: application/json
+
+{
+    "dateTime": "2024/03/11 17:00:00",
+    "title": "Som que Surge",
+    "place": "Praça do Samambaial",
+    "comments": "Entrada livre - 17h",
+    "visible": true
+}
+
+### Remove a Show from Agenda
+DELETE {{apiURL}}/agenda/65d6c76fc042ae4d00ee7909
+
