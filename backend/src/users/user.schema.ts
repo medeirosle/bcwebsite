@@ -1,5 +1,6 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose'
 import { HydratedDocument } from 'mongoose'
+import * as crypto from 'crypto'
 
 export type UserDocument = HydratedDocument<User>
 
@@ -9,7 +10,10 @@ export class User {
   email: string
 
   @Prop()
-  password: string
+  hash: string
+
+  @Prop()
+  salt: string
 
   @Prop()
   name: string

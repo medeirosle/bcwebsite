@@ -1,0 +1,10 @@
+@apiURL = http://192.168.3.62:3000
+
+### User Sign In
+POST  {{apiURL}}/auth/signIn
+Content-Type: application/json
+
+{
+    "email": "medeirosleandro1982@gmail.com",
+    "password": "itapoa1234"
+}

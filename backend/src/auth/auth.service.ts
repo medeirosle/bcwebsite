@@ -18,7 +18,7 @@ export class AuthService {
 
     if (!user) return null
 
-    delete user.password
+    delete user.hash, user.salt
 
     const token = jwt.sign(user, jwtPrivateKey, {
       algorithm: 'RS256'

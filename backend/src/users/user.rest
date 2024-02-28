@@ -1,0 +1,37 @@
+@apiURL = http://192.168.3.62:3000
+
+### GET users
+GET {{apiURL}}/users
+content-yype: application/json
+
+### Add User
+PUT  {{apiURL}}/users
+Content-Type: application/json
+
+{
+    "email": "medeirosleandro1982@gmail.com",
+    "password": "itapoa1234",
+    "name": "Leandro",
+    "active": false,
+    "isAdmin": true
+}
+
+### GET user
+GET {{apiURL}}/users/65dea3d1827a2b49286b02d7
+content-yype: application/json
+
+### Update user
+POST  {{apiURL}}/users/65dea3d1827a2b49286b02d7
+Content-Type: application/json
+
+{
+    "email": "medeirosleandro1982@gmail.com",
+    "password": "itapoa1234",
+    "name": "Leandro",
+    "active": true,
+    "isAdmin": true
+}
+
+### Remove a User
+DELETE {{apiURL}}/users/65dd4d0ff4febad942206bc7
+
