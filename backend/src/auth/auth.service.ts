@@ -1,16 +1,15 @@
-import { Injectable } from '@nestjs/common'
+import { Injectable, Logger } from '@nestjs/common'
 import { UsersService } from 'src/users/users.service'
-import jwt from 'jsonwebtoken'
+import { JwtService } from '@nestjs/jwt'
 
 @Injectable()
 export class AuthService {
-  constructor(private readonly userService: UsersService) {}
+  constructor(
+    private readonly userService: UsersService,
+    private readonly jwtService: JwtService
+  ) {}
 
-  async signIn(
-    email: string,
-    password: string,
-    jwtPrivateKey
-  ): Promise<string> {
+  async signIn(email: string, password: string): Promise<string> {
     const user = await this.userService.findOneByEmailAndPassword(
       email,
       password
@@ -20,9 +19,7 @@ export class AuthService {
 
     delete user.hash, user.salt
 
-    const token = jwt.sign(user, jwtPrivateKey, {
-      algorithm: 'RS256'
-    })
+    const token = await this.jwtService.signAsync(JSON.stringify(user))
 
     return token
   }

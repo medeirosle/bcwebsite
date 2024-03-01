@@ -1,10 +1,16 @@
 @apiURL = http://192.168.3.62:3000
 
 ### User Sign In
+# @name authTokenRequest
+# @prompt email
+# @prompt password
 POST  {{apiURL}}/auth/signIn
 Content-Type: application/json
 
 {
-    "email": "medeirosleandro1982@gmail.com",
-    "password": "itapoa1234"
+    "email": "{{email}}",
+    "password": "{{password}}"
 }
+
+###
+@token = {{authTokenRequest.response.body.token}}

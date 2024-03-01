@@ -1,11 +1,27 @@
 @apiURL = http://192.168.3.62:3000
 
+### User Sign In
+# @name authTokenRequest
+POST  {{apiURL}}/auth/signIn
+Content-Type: application/json
+
+{
+    "email": "medeirosleandro1982@gmail.com",
+    "password": "itapoa1234"
+}
+
+###
+@authToken = {{authTokenRequest.response.body.token}}
+
 ### GET users
 GET {{apiURL}}/users
+Authorization: Bearer {{authToken}}
 content-yype: application/json
+
 
 ### Add User
 PUT  {{apiURL}}/users
+Authorization: Bearer {{authToken}}
 Content-Type: application/json
 
 {
@@ -18,10 +34,12 @@ Content-Type: application/json
 
 ### GET user
 GET {{apiURL}}/users/65dea3d1827a2b49286b02d7
+Authorization: Bearer {{authToken}}
 content-yype: application/json
 
 ### Update user
 POST  {{apiURL}}/users/65dea3d1827a2b49286b02d7
+Authorization: Bearer {{authToken}}
 Content-Type: application/json
 
 {
@@ -34,4 +52,5 @@ Content-Type: application/json
 
 ### Remove a User
 DELETE {{apiURL}}/users/65dd4d0ff4febad942206bc7
-
+Authorization: Bearer {{authToken}}
+Content-Type: application/json

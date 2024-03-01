@@ -1,12 +1,28 @@
 @apiURL = http://192.168.3.62:3000
 
+### User Sign In
+# @name authTokenRequest
+POST  {{apiURL}}/auth/signIn
+Content-Type: application/json
+
+{
+    "email": "medeirosleandro1982@gmail.com",
+    "password": "itapoa1234"
+}
+
+###
+@authToken = {{authTokenRequest.response.body.token}}
+
+
 ### GET agenda
 GET {{apiURL}}/agenda
 content-yype: application/json
+Authorization: Bearer {{authToken}}
 
 ### Add Show to Agenda
 PUT  {{apiURL}}/agenda/add
 Content-Type: application/json
+Authorization: Bearer {{authToken}}
 
 {
     "dateTime": "2024/03/11 17:00:00",
@@ -19,10 +35,12 @@ Content-Type: application/json
 ### GET show
 GET {{apiURL}}/agenda/65d6c76fc042ae4d00ee7909
 content-yype: application/json
+Authorization: Bearer {{authToken}}
 
 ### Update show
-POST  {{apiURL}}/agenda/65d6c76fc042ae4d00ee7909
+POST  {{apiURL}}/agenda/65e15053c68cd617734b91d7
 Content-Type: application/json
+Authorization: Bearer {{authToken}}
 
 {
     "dateTime": "2024/03/11 17:00:00",
@@ -33,5 +51,7 @@ Content-Type: application/json
 }
 
 ### Remove a Show from Agenda
-DELETE {{apiURL}}/agenda/65d6c76fc042ae4d00ee7909
+DELETE {{apiURL}}/agenda/65e15053c68cd617734b91d7
+Content-Type: application/json
+Authorization: Bearer {{authToken}}
 
