@@ -13,12 +13,12 @@ function Sobre() {
       </p>      
       <p>
         O Bruxaria Caiçara é:
-        <ul>
-          <li>Chris Bertier: Guitarra e Backings</li>
-          <li>Dimitri Heler: Bateria e Backings</li>
-          <li>André Garcia: Baixo e Backings</li>
-          <li>Lê Medeiros: Guitarra, Violão, Ukulele e voz</li>
-        </ul>
+      </p>
+      <p>
+        Chris Bertier: Guitarra e Backings<br />
+        Dimitri Heler: Bateria e Backings<br />
+        André Garcia: Baixo e Backings<br />
+        Lê Medeiros: Guitarra, Violão, Ukulele e voz<br />
       </p>
     </section>
   );

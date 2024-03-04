@@ -17,7 +17,6 @@ Content-Type: application/json
 ### GET agenda
 GET {{apiURL}}/agenda
 content-yype: application/json
-Authorization: Bearer {{authToken}}
 
 ### Add Show to Agenda
 PUT  {{apiURL}}/agenda/add

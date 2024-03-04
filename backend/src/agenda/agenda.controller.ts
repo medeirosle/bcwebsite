@@ -19,7 +19,6 @@ import { AuthGuard } from 'src/auth/auth.guard'
 export class AgendaController {
   constructor(private readonly agendaService: AgendaService) {}
 
-  @UseGuards(AuthGuard)
   @Get()
   getAgenda(): Promise<Show[]> {
     return this.agendaService.findAll()

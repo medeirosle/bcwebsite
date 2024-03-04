@@ -41,8 +41,7 @@ function Nav() {
             justifyContent: "center",
           }}
         >
-          <a
-            href="#"                        
+          <div                        
             style={{
               textDecoration: "none",
               border: 0,
@@ -58,7 +57,7 @@ function Nav() {
           >
             <svg width="100%" height="100%" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                <path fill-rule="evenodd" clip-rule="evenodd" d="M7.50001 3.79291L10.2071 6.50001L9.50001 7.20712L8.00001 5.70712V11H7.00001V5.70712L5.50001 7.20712L4.7929 6.50001L7.50001 3.79291Z" fill="black"/> </svg>
-          </a>
+          </div>
         </div>
       </a>
       <header>
