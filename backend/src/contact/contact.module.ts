@@ -11,14 +11,14 @@ import { MailerModule } from '@nestjs-modules/mailer'
     }),
     MailerModule.forRoot({
       transport: {
-        host: 'smtp.mailgun.org',
-        secure: false,
-        port: 587,
+        host: process.env.MAIL_HOST,
+        secure: process.env.MAIL_SECURE === 'true',
+        port: parseInt(process.env.MAIL_PORT),
         auth: {
-          user: 'postmaster@sandbox8b4cafd51a924bb5b42c02baba33e60f.mailgun.org',
-          pass: '840f6550d6d553b2aaf46e393c0304eb-2c441066-593c43d8'
+          user: process.env.MAIL_USER,
+          pass: process.env.MAIL_PASSWORD
         },
-        ignoreTLS: true
+        ignoreTLS: process.env.MAIL_IGNORE_TLS === 'true'
       }
     })
   ],
