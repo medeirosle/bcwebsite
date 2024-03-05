@@ -225,7 +225,7 @@ form .action {
   margin-top: 10px;
 }
 
-form input[type=submit] {
+form button {
   background-color: #1e4835;
   border: none;
   width: 80px;

@@ -7,6 +7,7 @@ import { AgendaModule } from './agenda/agenda.module'
 import { AgendaController } from './agenda/agenda.controller'
 import { AuthModule } from './auth/auth.module'
 import { UsersModule } from './users/users.module'
+import { ContactModule } from './contact/contact.module';
 
 @Module({
   imports: [
@@ -19,7 +20,8 @@ import { UsersModule } from './users/users.module'
     }),
     AgendaModule,
     AuthModule,
-    UsersModule
+    UsersModule,
+    ContactModule
   ],
   controllers: [AppController, AgendaController],
   providers: [AppService]

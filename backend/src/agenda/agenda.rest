@@ -32,17 +32,17 @@ Authorization: Bearer {{authToken}}
 }
 
 ### GET show
-GET {{apiURL}}/agenda/65d6c76fc042ae4d00ee7909
+GET {{apiURL}}/agenda/65d6c766c042ae4d00ee7906
 content-yype: application/json
 Authorization: Bearer {{authToken}}
 
 ### Update show
-POST  {{apiURL}}/agenda/65e15053c68cd617734b91d7
+POST  {{apiURL}}/agenda/65d6c766c042ae4d00ee7906
 Content-Type: application/json
 Authorization: Bearer {{authToken}}
 
 {
-    "dateTime": "2024/03/11 17:00:00",
+    "dateTime": "2024/03/10 17:00:00",
     "title": "Som que Surge",
     "place": "Praça do Samambaial",
     "comments": "Entrada livre - 17h",
