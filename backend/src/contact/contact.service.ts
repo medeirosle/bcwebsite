@@ -1,18 +1,29 @@
-import { Injectable, Logger } from '@nestjs/common'
-import { MailerService } from '@nestjs-modules/mailer'
+import { Injectable } from '@nestjs/common'
 
 @Injectable()
 export class ContactService {
-  constructor(private readonly mailerService: MailerService) {}
+  constructor() {}
 
   async sendEmail({ email, name, message }): Promise<void> {
     try {
-      return await this.mailerService.sendMail({
-        to: 'caicarabruxaria@gmail.com',
-        from: email,
-        subject: 'Contato pelo website - de ' + name,
-        html: message
+      const response = await fetch('https://api.emailjs.com/api/v1.0/email/send',{
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        service_id: process.env.EMAILJS_SERVICE_ID,
+        template_id: process.env.EMAILJS_TEMPLATE_ID,
+        user_id: process.env.EMAILJS_USER_ID,
+        template_params: {
+          'from_name': name,
+          'message': message,
+          'reply_to': email,
+        }
       })
+    })
+
+    if (!response.ok) throw await response.text();
     } catch (err) {
       console.log(err)
 

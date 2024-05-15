@@ -5,6 +5,7 @@ import { postContactMessage } from "./App.API";
 function Contato() {
   const [contactMessage, setContactMessage] = useState({name: '', email: '', message: ''})  
   const [resultMessage, setResultMessage] = useState('Preencha os campos abaixo para enviar sua mensagem:')
+  const [captcha, setCaptcha] = useState("");
 
 
   async function sendContactMessage() {
@@ -38,8 +39,15 @@ function Contato() {
             <div className="field">
               <textarea rows="8" onChange={(e) => setContactMessage({...contactMessage, message: e.target.value})} value={contactMessage.message}></textarea>
             </div>
+            <div>
+            <ReCAPTCHA
+              sitekey={import.meta.env.VITE_SITE_KEY}
+              onChange={setCaptcha} />
+            </div>
             <div className="action">
-              <button onClick={async ()=> await sendContactMessage()}>Enviar</button>
+              {
+                captcha? <button onClick={async ()=> await sendContactMessage()}>Enviar</button> : null
+              }
             </div>
             <br />
           </div>          
