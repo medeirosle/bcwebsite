@@ -1,4 +1,4 @@
-@apiURL = http://192.168.3.62:3000
+@apiURL = http://localhost:3000
 
 ### User Sign In
 # @name authTokenRequest

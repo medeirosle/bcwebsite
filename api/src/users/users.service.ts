@@ -52,7 +52,7 @@ export class UsersService {
   ): Promise<User> {
     const user = await this.userModel.findOne({ email }).exec()
 
-    if (!user) throw new NotFoundException()
+    if (!user) return null
 
     const informedHash = this.getHash(password, user.salt)
 
@@ -64,8 +64,6 @@ export class UsersService {
 
       return userDTO
     }
-
-    throw new UnauthorizedException()
   }
 
   async update(updateUserDTO: UpdateUserDTO): Promise<User> {
