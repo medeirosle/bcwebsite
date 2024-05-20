@@ -20,8 +20,8 @@ export default createBrowserRouter([
   }
 ])
 
-function PrivateRoute({ children }): any {
-  const [cookies, setCookie] = useCookies(['bcAdminToken'])
+function PrivateRoute({ children }: any): any {
+  const [cookies] = useCookies(['bcAdminToken'])
 
   const isAuthenticated = checkUserAuthentication(cookies)
 

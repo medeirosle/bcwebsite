@@ -1,6 +1,5 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose'
 import { HydratedDocument } from 'mongoose'
-import * as crypto from 'crypto'
 
 export type UserDocument = HydratedDocument<User>
 

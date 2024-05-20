@@ -1,4 +1,4 @@
-const authenticate = async function (email, password) {
+const authenticate = async function (email: any, password: any) {
   const url = `${import.meta.env.VITE_BASE_URL}/auth/signIn`
 
   try {

@@ -1,4 +1,3 @@
-version: '3'
 services:
   mongodb:
     image: mongo
@@ -14,7 +13,7 @@ services:
       - 8081:8081
     env_file:
       - .env.production
-  backend:
+  bc-api:
     build: ./api
     restart: always
     ports:
@@ -23,12 +22,19 @@ services:
       - .env.production
     depends_on:
       - mongodb
-  frontend:
+  bc-website:
     build: ./website
     restart: always
     ports:
       - 80:80
     depends_on:
-      - backend
+      - bc-api
+  bc-admin:
+    build: ./admin
+    restart: always
+    ports:
+      - 81:80
+    depends_on:
+      - bc-api
 volumes:
   mongodb_data:
