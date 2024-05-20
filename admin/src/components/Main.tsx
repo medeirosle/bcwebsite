@@ -1,12 +1,9 @@
 import React, { useState } from 'react'
 import { Card } from '@mui/material'
+import MenuAppBar from './MenuAppBar'
 
 const Login: React.FC = () => {
-  return (
-    <Card variant="outlined" sx={{ padding: 5 }}>
-      <div>Welcome</div>
-    </Card>
-  )
+  return <MenuAppBar />
 }
 
 export default Login

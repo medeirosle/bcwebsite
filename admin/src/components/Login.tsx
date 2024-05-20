@@ -43,51 +43,53 @@ const Login: React.FC = () => {
   }
 
   return (
-    <Card variant="outlined" sx={{ padding: 5 }}>
-      <form onSubmit={handleSubmit}>
-        <TextField
-          label="Email"
-          type="email"
-          value={email}
-          onChange={handleEmailChange}
-          fullWidth
-          margin="normal"
-        />
-        <TextField
-          label="Password"
-          type="password"
-          value={password}
-          onChange={handlePasswordChange}
-          fullWidth
-          margin="normal"
-        />
-        <br />
-        <br />
-        <ReCAPTCHA
-          sitekey={import.meta.env.VITE_SITE_KEY}
-          onChange={setCaptcha}
-        />
-        {captcha ? (
-          <Grid container spacing={2} sx={{ marginTop: 2 }}>
-            <Grid item xs={6} sx={{ textAlign: 'right' }}>
-              <Button type="submit" variant="contained" color="primary">
-                Login
-              </Button>
+    <div id="login">
+      <Card variant="outlined" sx={{ padding: 5 }}>
+        <form onSubmit={handleSubmit}>
+          <TextField
+            label="Email"
+            type="email"
+            value={email}
+            onChange={handleEmailChange}
+            fullWidth
+            margin="normal"
+          />
+          <TextField
+            label="Password"
+            type="password"
+            value={password}
+            onChange={handlePasswordChange}
+            fullWidth
+            margin="normal"
+          />
+          <br />
+          <br />
+          <ReCAPTCHA
+            sitekey={import.meta.env.VITE_SITE_KEY}
+            onChange={setCaptcha}
+          />
+          {captcha ? (
+            <Grid container spacing={2} sx={{ marginTop: 2 }}>
+              <Grid item xs={6} sx={{ textAlign: 'right' }}>
+                <Button type="submit" variant="contained" color="primary">
+                  Login
+                </Button>
+              </Grid>
+              <Grid item xs={6} sx={{ textAlign: 'left' }}>
+                <Button
+                  type="button"
+                  variant="contained"
+                  color="secondary"
+                  onClick={() => clearForm()}
+                >
+                  Reset
+                </Button>
+              </Grid>
             </Grid>
-            <Grid item xs={6} sx={{ textAlign: 'left' }}>
-              <Button
-                type="button"
-                variant="contained"
-                color="secondary"
-                onClick={() => clearForm()}
-              >
-                Reset
-              </Button>
-            </Grid>
-          </Grid>
-        ) : null}
-      </form>
-    </Card>
+          ) : null}
+        </form>
+      </Card>
+    </div>
   )
 }
 

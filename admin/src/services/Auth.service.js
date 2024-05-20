@@ -1,8 +1,4 @@
-import { useCookies } from 'react-cookie'
-
-const checkUserAuthentication = function () {
-  const [cookies, setCookie] = useCookies(['bcAdminToken'])
-
+const checkUserAuthentication = function (cookies) {
   const token = cookies.bcAdminToken
   if (!token) {
     return false
@@ -10,4 +6,8 @@ const checkUserAuthentication = function () {
   return true
 }
 
-export { checkUserAuthentication }
+const logout = function (setCookie) {
+  setCookie('bcAdminToken', null, { path: '/' })
+}
+
+export { checkUserAuthentication, logout }
