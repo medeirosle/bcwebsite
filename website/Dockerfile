@@ -1,6 +1,17 @@
+FROM node:18.15.0 AS build
+
+ENV PNPM_HOME="/pnpm"
+ENV PATH="$PNPM_HOME:$PATH"
+RUN corepack enable
+
+COPY . .
+
+RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --prod --frozen-lockfile
+RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm run build
+
 FROM nginx
 
-COPY dist /usr/share/nginx/html
+COPY --from=build dist /usr/share/nginx/html
 
 EXPOSE 80
 
