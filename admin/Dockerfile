@@ -6,7 +6,7 @@ RUN corepack enable
 
 COPY . .
 
-RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --prod --frozen-lockfile
+RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install
 RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm run build
 
 FROM nginx
