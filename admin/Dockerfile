@@ -13,6 +13,8 @@ RUN corepack enable
 
 COPY . .
 
+RUN printenv
+
 RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install
 RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm run build
 
