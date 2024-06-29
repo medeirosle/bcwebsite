@@ -1,6 +1,3 @@
-ARG vite_base_url
-ARG vite_site_key
-
 FROM node:18.15.0 AS build
 
 ENV PNPM_HOME="/pnpm"
