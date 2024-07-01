@@ -3,7 +3,7 @@ FROM node:18.15.0 AS build
 ENV PNPM_HOME="/pnpm"
 ENV PATH="$PNPM_HOME:$PATH"
 
-ENV VITE_BASE_URL="http://45.238.255.1:3000"
+ENV VITE_BASE_URL="http://xn--bruxariacaiara-qjb.com.br:3000"
 ENV VITE_SITE_KEY="6LdcFjgpAAAAALJKbSk3KEcMHFGPiBzrHylV22Hz"
 
 RUN corepack enable
